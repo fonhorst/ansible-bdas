@@ -78,6 +78,8 @@
   tasks:
       - name: rewrite config  file
         template: src=templates/master.akka.conf.j2 dest=/SNCrawler/resources/akka.conf
+      - name: rewrite settings.properties  file
+        template: src=templates/settings.properties.j2 dest=/SNCrawler/resources/settings.properties
 
 
 - name: rewrite config file
@@ -86,10 +88,11 @@
   tags:
       - build
       - test
-
   tasks:
       - name: rewrite config  file
         template: src=templates/worker.akka.conf.j2 dest=/SNCrawler/resources/akka.conf
+      - name: rewrite settings.properties  file
+        template: src=templates/settings.properties.j2 dest=/SNCrawler/resources/settings.properties
 
 
 
@@ -112,8 +115,8 @@
   tags:
     - start_mesos_mode
   tasks:
-    - name: Starting SNCrawler MasterActorRunner
-      shell: "nohup java -cp target/SNCrawler-1.0.jar:target/lib/* -Djava.library.path=/usr/local/lib crawler.mesos.CrawlerMain {{ master_hostname }} > output/MasterActor.txt &"
+    - name: start SNCrawler master mesos_mode
+      shell: "nohup java -cp target/SNCrawler-1.0.jar:target/lib/* -Djava.library.path=/usr/local/lib crawler.mesos.CrawlerMain > output/MasterActor.txt &"
       args:
         chdir: "/SNCrawler"
 

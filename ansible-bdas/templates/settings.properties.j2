@@ -1,0 +1,4 @@
+mesosMasterIp={{mesos_master_hostname}}
+mongoMasterIp={{mongo_master_ip}}
+crawlerExecutorCommand=java -cp /SNCrawler/target/SNCrawler-1.0.jar:/SNCrawler/target/lib/* -Djava.library.path=/usr/local/lib crawler.mesos.CrawlerExecutorRunner
+numberOfStreamTasks=3
