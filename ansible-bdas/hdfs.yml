@@ -1,0 +1,17 @@
+---
+
+- name: apply common configuration to all nodes
+  hosts: master
+  sudo: yes
+  tags:
+    - prepare
+  roles:
+    - hdfs_namenode
+
+- name: apply common configuration to all nodes
+  hosts: workers
+  sudo: yes
+  tags:
+    - prepare
+  roles:
+    - hdfs_datanode
