@@ -1,9 +1,6 @@
 node-92-11 ansible_ssh_host=192.168.92.11
 node-92-12 ansible_ssh_host=192.168.92.12
 node-92-13 ansible_ssh_host=192.168.92.13
-node-92-14 ansible_ssh_host=192.168.92.14
-node-92-15 ansible_ssh_host=192.168.92.15
-node-92-16 ansible_ssh_host=192.168.92.16
 ####
 
 [mesos_masters]
@@ -12,30 +9,11 @@ node-92-11
 [mesos_slaves]
 node-92-12
 node-92-13
-node-92-14
-node-92-15
-node-92-16
 
-[ganglia_monitors]
+[hdfs_namenodes]
 node-92-11
+
+[hdfs_datanodes]
 node-92-12
 node-92-13
-node-92-14
-node-92-15
-node-92-16
-
-[ganglia_meta]
-node-92-11
-
-[ganglia_web]
-node-92-11
-
-[fluentd]
-node-92-11
-node-92-12
-node-92-13
-node-92-14
-node-92-15
-node-92-16
-
 

@@ -135,23 +135,23 @@
 
 
 
-
-####################################
-### Stop services
-####################################
-- name: Stop mesos slaves
-  service: name=mesos-slave state=stopped enabled=no
-  sudo: yes
-  when: mesos_install_mode == "slave"
-  tags:
-    - stop
-
-- name: Stop mesos masters
-  service: name=mesos-master state=stopped enabled=no
-  sudo: yes
-  when: mesos_install_mode == "master"
-  tags:
-    - stop
-
-
+#
+#####################################
+#### Stop services
+#####################################
+#- name: Stop mesos slaves
+#  service: name=mesos-slave state=stopped enabled=no
+#  sudo: yes
+#  when: mesos_install_mode == "slave"
+#  tags:
+#    - stop
+#
+#- name: Stop mesos masters
+#  service: name=mesos-master state=stopped enabled=no
+#  sudo: yes
+#  when: mesos_install_mode == "master"
+#  tags:
+#    - stop
+#
+#
 

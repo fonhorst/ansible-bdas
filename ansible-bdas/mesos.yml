@@ -2,11 +2,20 @@
 # This playbook deploys the entire Mesos cluster infrastructure.
 # RUN: ansible-playbook mesos.yml
 
+
+
+- name: deploy hosts file
+  hosts: all
+  sudo: True
+  roles:
+    - { role: common }
+
+
 - name: deploy and configure the mesos masters
   hosts: mesos_masters
   sudo: True
   roles:
-    - { role: ansible_mesos, mesos_install_mode: "master", tags: ["mesos-master"] }
+    - { role: mesos, mesos_install_mode: "master", tags: ["mesos-master"] }
 
 
 
@@ -14,4 +23,4 @@
   hosts: mesos_slaves
   sudo: True
   roles:
-    - { role: ansible_mesos, mesos_install_mode: "slave", tags: ["mesos-slave"] }
+    - { role: mesos, mesos_install_mode: "slave", tags: ["mesos-slave"] }
