@@ -9,6 +9,7 @@ master_hostname: "{{ hostvars[groups['master'][0]]['ansible_hostname'] }}"
 
 mesos_master_hostname: "{{ hostvars[groups['mesos_masters'][0]]['ansible_hostname'] }}"
 hdfs_namenode_hostname: "{{ hostvars[groups['hdfs_namenodes'][0]]['ansible_hostname'] }}"
+spark_master_hostname: "{{ hostvars[groups['spark_masters'][0]]['ansible_hostname'] }}"
 
 clusteruser: "hadoop"
 clusteruser_home: "/home/hadoop"

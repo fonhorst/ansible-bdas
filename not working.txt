@@ -1,0 +1,519 @@
+want run spark-shell on mesos:
+
+vagrant@node-92-11:~$ sudo su hdfs
+hdfs@node-92-11:/home/vagrant$ cd /opt/spark/bin/
+hdfs@node-92-11:/opt/spark/bin$ ./spark-shell
+15/12/01 16:22:58 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+15/12/01 16:22:58 INFO spark.SecurityManager: Changing view acls to: hdfs
+15/12/01 16:22:58 INFO spark.SecurityManager: Changing modify acls to: hdfs
+15/12/01 16:22:58 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(hdfs); users with modify permissions: Set(hdfs)
+15/12/01 16:22:58 INFO spark.HttpServer: Starting HTTP Server
+15/12/01 16:22:58 INFO server.Server: jetty-8.y.z-SNAPSHOT
+15/12/01 16:22:58 INFO server.AbstractConnector: Started SocketConnector@0.0.0.0:45468
+15/12/01 16:22:58 INFO util.Utils: Successfully started service 'HTTP class server' on port 45468.
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 1.5.2
+      /_/
+
+Using Scala version 2.10.4 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_66)
+Type in expressions to have them evaluated.
+Type :help for more information.
+15/12/01 16:23:01 INFO spark.SparkContext: Running Spark version 1.5.2
+15/12/01 16:23:01 INFO spark.SecurityManager: Changing view acls to: hdfs
+15/12/01 16:23:01 INFO spark.SecurityManager: Changing modify acls to: hdfs
+15/12/01 16:23:01 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(hdfs); users with modify permissions: Set(hdfs)
+15/12/01 16:23:01 INFO slf4j.Slf4jLogger: Slf4jLogger started
+15/12/01 16:23:01 INFO Remoting: Starting remoting
+15/12/01 16:23:02 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@192.168.92.11:49514]
+15/12/01 16:23:02 INFO util.Utils: Successfully started service 'sparkDriver' on port 49514.
+15/12/01 16:23:02 INFO spark.SparkEnv: Registering MapOutputTracker
+15/12/01 16:23:02 INFO spark.SparkEnv: Registering BlockManagerMaster
+15/12/01 16:23:02 INFO storage.DiskBlockManager: Created local directory at /tmp/blockmgr-c0aa3e64-85fb-4b38-99c9-0f34db640bad
+15/12/01 16:23:02 INFO storage.MemoryStore: MemoryStore started with capacity 530.0 MB
+15/12/01 16:23:02 INFO spark.HttpFileServer: HTTP File server directory is /tmp/spark-3cb54cb5-ad75-4973-b72c-e0446913f4d9/httpd-02276c8f-86ef-4651-b0cc-9fd3a38500e5
+15/12/01 16:23:02 INFO spark.HttpServer: Starting HTTP Server
+15/12/01 16:23:02 INFO server.Server: jetty-8.y.z-SNAPSHOT
+15/12/01 16:23:02 INFO server.AbstractConnector: Started SocketConnector@0.0.0.0:53371
+15/12/01 16:23:02 INFO util.Utils: Successfully started service 'HTTP file server' on port 53371.
+15/12/01 16:23:02 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+15/12/01 16:23:02 INFO server.Server: jetty-8.y.z-SNAPSHOT
+15/12/01 16:23:02 INFO server.AbstractConnector: Started SelectChannelConnector@0.0.0.0:4040
+15/12/01 16:23:02 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+15/12/01 16:23:02 INFO ui.SparkUI: Started SparkUI at http://192.168.92.11:4040
+Warning: MESOS_NATIVE_LIBRARY is deprecated, use MESOS_NATIVE_JAVA_LIBRARY instead. Future releases will not support JNI bindings via MESOS_NATIVE_LIBRARY.
+15/12/01 16:23:02 WARN metrics.MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+Warning: MESOS_NATIVE_LIBRARY is deprecated, use MESOS_NATIVE_JAVA_LIBRARY instead. Future releases will not support JNI bindings via MESOS_NATIVE_LIBRARY.
+I1201 16:23:02.527489  4561 sched.cpp:164] Version: 0.25.0
+I1201 16:23:02.530309  4559 sched.cpp:262] New master detected at master@192.168.92.11:5050
+I1201 16:23:02.530818  4559 sched.cpp:272] No credentials provided. Attempting to register without authentication
+I1201 16:23:02.532529  4559 sched.cpp:641] Framework registered with 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0005
+15/12/01 16:23:02 INFO mesos.MesosSchedulerBackend: Registered as framework ID 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0005
+15/12/01 16:23:02 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 52545.
+15/12/01 16:23:02 INFO netty.NettyBlockTransferService: Server created on 52545
+15/12/01 16:23:02 INFO storage.BlockManagerMaster: Trying to register BlockManager
+15/12/01 16:23:02 INFO storage.BlockManagerMasterEndpoint: Registering block manager 192.168.92.11:52545 with 530.0 MB RAM, BlockManagerId(driver, 192.168.92.11, 52545)
+15/12/01 16:23:02 INFO storage.BlockManagerMaster: Registered BlockManager
+15/12/01 16:23:02 INFO repl.SparkILoop: Created spark context..
+Spark context available as sc.
+15/12/01 16:23:03 INFO hive.HiveContext: Initializing execution hive, version 1.2.1
+15/12/01 16:23:03 INFO client.ClientWrapper: Inspected Hadoop version: 2.6.0
+15/12/01 16:23:03 INFO client.ClientWrapper: Loaded org.apache.hadoop.hive.shims.Hadoop23Shims for Hadoop version 2.6.0
+15/12/01 16:23:03 INFO metastore.HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+15/12/01 16:23:03 INFO metastore.ObjectStore: ObjectStore, initialize called
+15/12/01 16:23:04 WARN DataNucleus.General: Plugin (Bundle) "org.datanucleus.store.rdbms" is already registered. Ensure you dont have multiple JAR versions of the same plugin in the classpath. The URL "file:/opt/spark/lib/datanucleus-rdbms-3.2.9.jar" is already registered, and you are trying to register an identical plugin located at URL "file:/opt/spark-1.5.2-bin-hadoop2.6/lib/datanucleus-rdbms-3.2.9.jar."
+15/12/01 16:23:04 WARN DataNucleus.General: Plugin (Bundle) "org.datanucleus.api.jdo" is already registered. Ensure you dont have multiple JAR versions of the same plugin in the classpath. The URL "file:/opt/spark/lib/datanucleus-api-jdo-3.2.6.jar" is already registered, and you are trying to register an identical plugin located at URL "file:/opt/spark-1.5.2-bin-hadoop2.6/lib/datanucleus-api-jdo-3.2.6.jar."
+15/12/01 16:23:04 WARN DataNucleus.General: Plugin (Bundle) "org.datanucleus" is already registered. Ensure you dont have multiple JAR versions of the same plugin in the classpath. The URL "file:/opt/spark/lib/datanucleus-core-3.2.10.jar" is already registered, and you are trying to register an identical plugin located at URL "file:/opt/spark-1.5.2-bin-hadoop2.6/lib/datanucleus-core-3.2.10.jar."
+15/12/01 16:23:04 INFO DataNucleus.Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+15/12/01 16:23:04 INFO DataNucleus.Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+15/12/01 16:23:04 WARN DataNucleus.Connection: BoneCP specified but not present in CLASSPATH (or one of dependencies)
+15/12/01 16:23:04 WARN DataNucleus.Connection: BoneCP specified but not present in CLASSPATH (or one of dependencies)
+15/12/01 16:23:05 INFO metastore.ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+15/12/01 16:23:06 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+15/12/01 16:23:06 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+15/12/01 16:23:06 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+15/12/01 16:23:06 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+15/12/01 16:23:07 INFO metastore.MetaStoreDirectSql: Using direct SQL, underlying DB is DERBY
+15/12/01 16:23:07 INFO metastore.ObjectStore: Initialized ObjectStore
+15/12/01 16:23:07 WARN metastore.ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 1.2.0
+15/12/01 16:23:07 WARN metastore.ObjectStore: Failed to get database default, returning NoSuchObjectException
+15/12/01 16:23:07 INFO metastore.HiveMetaStore: Added admin role in metastore
+15/12/01 16:23:07 INFO metastore.HiveMetaStore: Added public role in metastore
+15/12/01 16:23:07 INFO metastore.HiveMetaStore: No user is added in admin role, since config is empty
+15/12/01 16:23:07 INFO metastore.HiveMetaStore: 0: get_all_databases
+15/12/01 16:23:07 INFO HiveMetaStore.audit: ugi=hdfs    ip=unknown-ip-addr      cmd=get_all_databases
+15/12/01 16:23:07 INFO metastore.HiveMetaStore: 0: get_functions: db=default pat=*
+15/12/01 16:23:07 INFO HiveMetaStore.audit: ugi=hdfs    ip=unknown-ip-addr      cmd=get_functions: db=default pat=*
+15/12/01 16:23:07 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MResourceUri" is tagged as "embedded-only" so does not have its own datastore table.
+15/12/01 16:23:08 INFO session.SessionState: Created local directory: /tmp/93b9392e-eaf3-48cb-b742-8059700c1695_resources
+15/12/01 16:23:08 INFO session.SessionState: Created HDFS directory: /tmp/hive/hdfs/93b9392e-eaf3-48cb-b742-8059700c1695
+15/12/01 16:23:08 INFO session.SessionState: Created local directory: /tmp/hdfs/93b9392e-eaf3-48cb-b742-8059700c1695
+15/12/01 16:23:08 INFO session.SessionState: Created HDFS directory: /tmp/hive/hdfs/93b9392e-eaf3-48cb-b742-8059700c1695/_tmp_space.db
+15/12/01 16:23:08 INFO hive.HiveContext: default warehouse location is /user/hive/warehouse
+15/12/01 16:23:08 INFO hive.HiveContext: Initializing HiveMetastoreConnection version 1.2.1 using Spark classes.
+15/12/01 16:23:08 INFO client.ClientWrapper: Inspected Hadoop version: 2.6.0
+15/12/01 16:23:08 INFO client.ClientWrapper: Loaded org.apache.hadoop.hive.shims.Hadoop23Shims for Hadoop version 2.6.0
+15/12/01 16:23:08 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+15/12/01 16:23:09 INFO metastore.HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+15/12/01 16:23:09 INFO metastore.ObjectStore: ObjectStore, initialize called
+15/12/01 16:23:09 WARN DataNucleus.General: Plugin (Bundle) "org.datanucleus.store.rdbms" is already registered. Ensure you dont have multiple JAR versions of the same plugin in the classpath. The URL "file:/opt/spark/lib/datanucleus-rdbms-3.2.9.jar" is already registered, and you are trying to register an identical plugin located at URL "file:/opt/spark-1.5.2-bin-hadoop2.6/lib/datanucleus-rdbms-3.2.9.jar."
+15/12/01 16:23:09 WARN DataNucleus.General: Plugin (Bundle) "org.datanucleus.api.jdo" is already registered. Ensure you dont have multiple JAR versions of the same plugin in the classpath. The URL "file:/opt/spark/lib/datanucleus-api-jdo-3.2.6.jar" is already registered, and you are trying to register an identical plugin located at URL "file:/opt/spark-1.5.2-bin-hadoop2.6/lib/datanucleus-api-jdo-3.2.6.jar."
+15/12/01 16:23:09 WARN DataNucleus.General: Plugin (Bundle) "org.datanucleus" is already registered. Ensure you dont have multiple JAR versions of the same plugin in the classpath. The URL "file:/opt/spark/lib/datanucleus-core-3.2.10.jar" is already registered, and you are trying to register an identical plugin located at URL "file:/opt/spark-1.5.2-bin-hadoop2.6/lib/datanucleus-core-3.2.10.jar."
+15/12/01 16:23:09 INFO DataNucleus.Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+15/12/01 16:23:09 INFO DataNucleus.Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+15/12/01 16:23:09 WARN DataNucleus.Connection: BoneCP specified but not present in CLASSPATH (or one of dependencies)
+15/12/01 16:23:09 WARN DataNucleus.Connection: BoneCP specified but not present in CLASSPATH (or one of dependencies)
+15/12/01 16:23:10 INFO metastore.ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+15/12/01 16:23:11 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+15/12/01 16:23:11 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+15/12/01 16:23:11 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+15/12/01 16:23:11 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+15/12/01 16:23:11 INFO DataNucleus.Query: Reading in results for query "org.datanucleus.store.rdbms.query.SQLQuery@0" since the connection used is closing
+15/12/01 16:23:11 INFO metastore.MetaStoreDirectSql: Using direct SQL, underlying DB is DERBY
+15/12/01 16:23:11 INFO metastore.ObjectStore: Initialized ObjectStore
+15/12/01 16:23:11 INFO metastore.HiveMetaStore: Added admin role in metastore
+15/12/01 16:23:11 INFO metastore.HiveMetaStore: Added public role in metastore
+15/12/01 16:23:11 INFO metastore.HiveMetaStore: No user is added in admin role, since config is empty
+15/12/01 16:23:11 INFO metastore.HiveMetaStore: 0: get_all_databases
+15/12/01 16:23:11 INFO HiveMetaStore.audit: ugi=hdfs    ip=unknown-ip-addr      cmd=get_all_databases
+15/12/01 16:23:11 INFO metastore.HiveMetaStore: 0: get_functions: db=default pat=*
+15/12/01 16:23:11 INFO HiveMetaStore.audit: ugi=hdfs    ip=unknown-ip-addr      cmd=get_functions: db=default pat=*
+15/12/01 16:23:11 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MResourceUri" is tagged as "embedded-only" so does not have its own datastore table.
+15/12/01 16:23:12 INFO session.SessionState: Created local directory: /tmp/69b3f7fd-2799-4a05-ba0e-02458837821b_resources
+15/12/01 16:23:12 INFO session.SessionState: Created HDFS directory: /tmp/hive/hdfs/69b3f7fd-2799-4a05-ba0e-02458837821b
+15/12/01 16:23:12 INFO session.SessionState: Created local directory: /tmp/hdfs/69b3f7fd-2799-4a05-ba0e-02458837821b
+15/12/01 16:23:12 INFO session.SessionState: Created HDFS directory: /tmp/hive/hdfs/69b3f7fd-2799-4a05-ba0e-02458837821b/_tmp_space.db
+15/12/01 16:23:12 INFO repl.SparkILoop: Created sql context (with Hive support)..
+SQL context available as sqlContext.
+                                       ^
+
+scala> val count = sc.parallelize(1 to 1000).map{i =>
+     |   val x = Math.random()
+     |   val y = Math.random()
+     |   if (x*x + y*y < 1) 1 else 0
+     | }.reduce(_ + _)
+15/12/01 16:24:02 INFO spark.SparkContext: Starting job: reduce at <console>:25
+15/12/01 16:24:02 INFO scheduler.DAGScheduler: Got job 0 (reduce at <console>:25) with 8 output partitions
+15/12/01 16:24:02 INFO scheduler.DAGScheduler: Final stage: ResultStage 0(reduce at <console>:25)
+15/12/01 16:24:02 INFO scheduler.DAGScheduler: Parents of final stage: List()
+15/12/01 16:24:02 INFO scheduler.DAGScheduler: Missing parents: List()
+15/12/01 16:24:02 INFO scheduler.DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at map at <console>:21), which has no missing parents
+15/12/01 16:24:02 INFO storage.MemoryStore: ensureFreeSpace(1928) called with curMem=0, maxMem=555755765
+15/12/01 16:24:03 INFO storage.MemoryStore: Block broadcast_0 stored as values in memory (estimated size 1928.0 B, free 530.0 MB)
+15/12/01 16:24:03 INFO storage.MemoryStore: ensureFreeSpace(1192) called with curMem=1928, maxMem=555755765
+15/12/01 16:24:03 INFO storage.MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 1192.0 B, free 530.0 MB)
+15/12/01 16:24:03 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on 192.168.92.11:52545 (size: 1192.0 B, free: 530.0 MB)
+15/12/01 16:24:03 INFO spark.SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:861
+15/12/01 16:24:03 INFO scheduler.DAGScheduler: Submitting 8 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at map at <console>:21)
+15/12/01 16:24:03 INFO scheduler.TaskSchedulerImpl: Adding task set 0.0 with 8 tasks
+15/12/01 16:24:18 WARN scheduler.TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+15/12/01 16:24:33 WARN scheduler.TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+15/12/01 16:24:48 WARN scheduler.TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+15/12/01 16:25:03 WARN scheduler.TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+15/12/01 16:25:18 WARN scheduler.TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+15/12/01 16:25:33 WARN scheduler.TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+15/12/01 16:25:48 WARN scheduler.TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+15/12/01 16:26:03 WARN scheduler.TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+15/12/01 16:26:18 WARN scheduler.TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+
+
+
+
+mesos master log:
+
+I1201 16:31:36.915174  1653 master.cpp:2179] Received SUBSCRIBE call for framework 'Spark shell' at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:31:36.915287  1653 master.cpp:2250] Subscribing framework Spark shell with checkpointing disabled and capabilities [  ]
+I1201 16:31:36.915529  1654 hierarchical.hpp:515] Added framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:31:36.915774  1654 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:31:36.972260  1650 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O452 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:31:36.972429  1650 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:31:36.972617  1655 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O453 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:31:36.972695  1655 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:31:42.577457  1652 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:31:42.580425  1653 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O454 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:31:42.580585  1653 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:31:42.580945  1650 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O455 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:31:42.581070  1650 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:31:44.044900  1652 http.cpp:336] HTTP GET for /master/state.json from 192.168.92.1:56492 with User-Agent='Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+I1201 16:31:47.582140  1656 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:31:47.583858  1653 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O456 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:31:47.583981  1653 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:31:47.584326  1655 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O457 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:31:47.584501  1655 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:31:52.586217  1657 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:31:52.587774  1652 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O458 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:31:52.587947  1652 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O459 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:31:52.588047  1652 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:31:52.588115  1652 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:31:54.049206  1650 http.cpp:336] HTTP GET for /master/state.json from 192.168.92.1:56492 with User-Agent='Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+I1201 16:31:57.591279  1657 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:31:57.592916  1656 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O460 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:31:57.593019  1656 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:31:57.593489  1654 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O461 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:31:57.593618  1654 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:02.595178  1655 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:02.596835  1657 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O462 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:02.596935  1657 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:02.597231  1650 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O463 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:02.597316  1650 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:04.052150  1655 http.cpp:336] HTTP GET for /master/state.json from 192.168.92.1:56492 with User-Agent='Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+I1201 16:32:07.597681  1650 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:07.599499  1655 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O464 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:07.599598  1655 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:07.599961  1651 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O465 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:07.600059  1651 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:12.601667  1650 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:12.603581  1650 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O466 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:12.603672  1650 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O467 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:12.603768  1650 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:12.603824  1650 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:14.055899  1651 http.cpp:336] HTTP GET for /master/state.json from 192.168.92.1:56492 with User-Agent='Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+I1201 16:32:17.605379  1655 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:17.607182  1651 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O468 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:17.607282  1651 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:17.607635  1657 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O469 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:17.607717  1657 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:22.609410  1656 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:22.611227  1652 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O470 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:22.611328  1652 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:22.611729  1653 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O471 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:22.611858  1653 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:24.063290  1656 http.cpp:336] HTTP GET for /master/state.json from 192.168.92.1:56492 with User-Agent='Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+I1201 16:32:27.025269  1652 master.cpp:3379] Processing REVIVE call for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:27.025378  1652 hierarchical.hpp:1197] Removed offer filters for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:27.025552  1652 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:27.028846  1653 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O472 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:27.028995  1653 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:27.029180  1655 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O473 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:27.029260  1655 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:32.622221  1657 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:32.623827  1656 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O474 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:32.623941  1656 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:32.624102  1654 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O475 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:32.624260  1654 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:34.066745  1657 http.cpp:336] HTTP GET for /master/state.json from 192.168.92.1:56492 with User-Agent='Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+I1201 16:32:37.626559  1651 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:37.628156  1650 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O476 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:37.628253  1650 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:37.628542  1656 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O477 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:37.628620  1656 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:42.630241  1652 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:42.631932  1655 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O478 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:42.632048  1655 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:42.632300  1657 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O479 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:42.632381  1657 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:44.070533  1653 http.cpp:336] HTTP GET for /master/state.json from 192.168.92.1:56492 with User-Agent='Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+I1201 16:32:48.632889  1651 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:48.634413  1657 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O480 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:48.634673  1657 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:48.634862  1650 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O481 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:48.634940  1650 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:53.636184  1654 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:53.638492  1653 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O482 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:53.638614  1653 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:53.638806  1655 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O483 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:53.638891  1655 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:54.073176  1650 http.cpp:336] HTTP GET for /master/state.json from 192.168.92.1:56492 with User-Agent='Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+I1201 16:32:58.639279  1650 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:58.641029  1652 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O484 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:58.641124  1652 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:32:58.641307  1655 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O485 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:32:58.641449  1655 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:33:04.076630  1651 http.cpp:336] HTTP GET for /master/state.json from 192.168.92.1:56492 with User-Agent='Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+I1201 16:33:04.642312  1656 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:33:04.643810  1654 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O486 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:33:04.643932  1654 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:33:04.644104  1652 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O487 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:33:04.644183  1652 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:33:09.647449  1650 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:33:09.648994  1656 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O488 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:33:09.649119  1656 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:33:09.649310  1654 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O489 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:33:09.649392  1654 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:33:14.082290  1655 http.cpp:336] HTTP GET for /master/state.json from 192.168.92.1:56492 with User-Agent='Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+I1201 16:33:14.651769  1650 master.cpp:4967] Sending 2 offers to framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:33:14.653621  1654 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O490 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 at slave(1)@192.168.92.12:5051 (node-92-12) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:33:14.653723  1654 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S0 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:33:14.653894  1652 master.cpp:2918] Processing ACCEPT call for offers: [ 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-O491 ] on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 at slave(1)@192.168.92.13:5051 (node-92-13) for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:33:14.653973  1652 hierarchical.hpp:1103] Recovered cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000] (total: cpus(*):2; mem(*):1000; disk(*):35164; ports(*):[31000-32000], allocated: ) on slave 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-S1 from framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:33:16.872629  1654 master.cpp:5559] Processing TEARDOWN call for framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:33:16.872725  1654 master.cpp:5571] Removing framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006 (Spark shell) at scheduler-302fcdcb-d682-4618-a4d4-9f93d7ff4a97@192.168.92.11:36528
+I1201 16:33:16.872791  1654 hierarchical.hpp:599] Deactivated framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+I1201 16:33:16.872808  1654 hierarchical.hpp:552] Removed framework 3734b1cd-8bfb-4ae2-92b8-97ae527ff81b-0006
+
+
+
+vagrant@controlmachine:~/project/ansible-bdas$ ansible all -a "cat /opt/spark/conf/spark-env.sh"
+node-92-13 | success | rc=0 >>
+#!/usr/bin/env bash
+
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
+
+# options for standalone deploy mode
+export SPARK_MASTER_IP=node-92-11
+export SPARK_MASTER_PORT=7077
+export SPARK_WORKER_MEMORY=4g
+export HADOOP_CONF_DIR=/etc/hadoop/conf
+
+
+# This file is sourced when running various Spark programs.
+# Copy it as spark-env.sh and edit that to configure Spark for your site.
+
+# Options read when launching programs locally with
+# ./bin/run-example or ./bin/spark-submit
+# - HADOOP_CONF_DIR, to point Spark towards Hadoop configuration files
+# - SPARK_LOCAL_IP, to set the IP address Spark binds to on this node
+# - SPARK_PUBLIC_DNS, to set the public dns name of the driver program
+# - SPARK_CLASSPATH, default classpath entries to append
+
+# Options read by executors and drivers running inside the cluster
+# - SPARK_LOCAL_IP, to set the IP address Spark binds to on this node
+# - SPARK_PUBLIC_DNS, to set the public DNS name of the driver program
+# - SPARK_CLASSPATH, default classpath entries to append
+# - SPARK_LOCAL_DIRS, storage directories to use on this node for shuffle and RDD data
+# - MESOS_NATIVE_LIBRARY, to point to your libmesos.so if you use Mesos
+
+# Options read in YARN client mode
+# - HADOOP_CONF_DIR, to point Spark towards Hadoop configuration files
+# - SPARK_EXECUTOR_INSTANCES, Number of workers to start (Default: 2)
+# - SPARK_EXECUTOR_CORES, Number of cores for the workers (Default: 1).
+# - SPARK_EXECUTOR_MEMORY, Memory per Worker (e.g. 1000M, 2G) (Default: 1G)
+# - SPARK_DRIVER_MEMORY, Memory for Master (e.g. 1000M, 2G) (Default: 512 Mb)
+# - SPARK_YARN_APP_NAME, The name of your application (Default: Spark)
+# - SPARK_YARN_QUEUE, The hadoop queue to use for allocation requests (Default: ‘default’)
+# - SPARK_YARN_DIST_FILES, Comma separated list of files to be distributed with the job.
+# - SPARK_YARN_DIST_ARCHIVES, Comma separated list of archives to be distributed with the job.
+
+# Options for the daemons used in the standalone deploy mode:
+# - SPARK_MASTER_IP, to bind the master to a different IP address or hostname
+# - SPARK_MASTER_PORT / SPARK_MASTER_WEBUI_PORT, to use non-default ports for the master
+# - SPARK_MASTER_OPTS, to set config properties only for the master (e.g. "-Dx=y")
+# - SPARK_WORKER_CORES, to set the number of cores to use on this machine
+# - SPARK_WORKER_MEMORY, to set how much total memory workers have to give executors (e.g. 1000m, 2g)
+# - SPARK_WORKER_PORT / SPARK_WORKER_WEBUI_PORT, to use non-default ports for the worker
+# - SPARK_WORKER_INSTANCES, to set the number of worker processes per node
+# - SPARK_WORKER_DIR, to set the working directory of worker processes
+# - SPARK_WORKER_OPTS, to set config properties only for the worker (e.g. "-Dx=y")
+# - SPARK_HISTORY_OPTS, to set config properties only for the history server (e.g. "-Dx=y")
+# - SPARK_DAEMON_JAVA_OPTS, to set config properties for all daemons (e.g. "-Dx=y")
+# - SPARK_PUBLIC_DNS, to set the public dns name of the master or workers
+
+node-92-12 | success | rc=0 >>
+#!/usr/bin/env bash
+
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
+
+# options for standalone deploy mode
+export SPARK_MASTER_IP=node-92-11
+export SPARK_MASTER_PORT=7077
+export SPARK_WORKER_MEMORY=4g
+export HADOOP_CONF_DIR=/etc/hadoop/conf
+
+
+# This file is sourced when running various Spark programs.
+# Copy it as spark-env.sh and edit that to configure Spark for your site.
+
+# Options read when launching programs locally with
+# ./bin/run-example or ./bin/spark-submit
+# - HADOOP_CONF_DIR, to point Spark towards Hadoop configuration files
+# - SPARK_LOCAL_IP, to set the IP address Spark binds to on this node
+# - SPARK_PUBLIC_DNS, to set the public dns name of the driver program
+# - SPARK_CLASSPATH, default classpath entries to append
+
+# Options read by executors and drivers running inside the cluster
+# - SPARK_LOCAL_IP, to set the IP address Spark binds to on this node
+# - SPARK_PUBLIC_DNS, to set the public DNS name of the driver program
+# - SPARK_CLASSPATH, default classpath entries to append
+# - SPARK_LOCAL_DIRS, storage directories to use on this node for shuffle and RDD data
+# - MESOS_NATIVE_LIBRARY, to point to your libmesos.so if you use Mesos
+
+# Options read in YARN client mode
+# - HADOOP_CONF_DIR, to point Spark towards Hadoop configuration files
+# - SPARK_EXECUTOR_INSTANCES, Number of workers to start (Default: 2)
+# - SPARK_EXECUTOR_CORES, Number of cores for the workers (Default: 1).
+# - SPARK_EXECUTOR_MEMORY, Memory per Worker (e.g. 1000M, 2G) (Default: 1G)
+# - SPARK_DRIVER_MEMORY, Memory for Master (e.g. 1000M, 2G) (Default: 512 Mb)
+# - SPARK_YARN_APP_NAME, The name of your application (Default: Spark)
+# - SPARK_YARN_QUEUE, The hadoop queue to use for allocation requests (Default: ‘default’)
+# - SPARK_YARN_DIST_FILES, Comma separated list of files to be distributed with the job.
+# - SPARK_YARN_DIST_ARCHIVES, Comma separated list of archives to be distributed with the job.
+
+# Options for the daemons used in the standalone deploy mode:
+# - SPARK_MASTER_IP, to bind the master to a different IP address or hostname
+# - SPARK_MASTER_PORT / SPARK_MASTER_WEBUI_PORT, to use non-default ports for the master
+# - SPARK_MASTER_OPTS, to set config properties only for the master (e.g. "-Dx=y")
+# - SPARK_WORKER_CORES, to set the number of cores to use on this machine
+# - SPARK_WORKER_MEMORY, to set how much total memory workers have to give executors (e.g. 1000m, 2g)
+# - SPARK_WORKER_PORT / SPARK_WORKER_WEBUI_PORT, to use non-default ports for the worker
+# - SPARK_WORKER_INSTANCES, to set the number of worker processes per node
+# - SPARK_WORKER_DIR, to set the working directory of worker processes
+# - SPARK_WORKER_OPTS, to set config properties only for the worker (e.g. "-Dx=y")
+# - SPARK_HISTORY_OPTS, to set config properties only for the history server (e.g. "-Dx=y")
+# - SPARK_DAEMON_JAVA_OPTS, to set config properties for all daemons (e.g. "-Dx=y")
+# - SPARK_PUBLIC_DNS, to set the public dns name of the master or workers
+
+node-92-11 | success | rc=0 >>
+#!/usr/bin/env bash
+
+# options for standalone deploy mode
+export SPARK_MASTER_IP=node-92-11
+export SPARK_MASTER_PORT=7077
+export SPARK_WORKER_MEMORY=4g
+export HADOOP_CONF_DIR=/etc/hadoop/conf
+
+# options for running under mesos
+export MESOS_NATIVE_LIBRARY=/usr/lib/libmesos.so
+export SPARK_EXECUTOR_URI=hdfs://node-92-11/tmp/spark-1.5.2-bin-hadoop2.6.tgz
+export MASTER=mesos://node-92-11:5050
+
+# This file is sourced when running various Spark programs.
+# Copy it as spark-env.sh and edit that to configure Spark for your site.
+
+# Options read when launching programs locally with
+# ./bin/run-example or ./bin/spark-submit
+# - HADOOP_CONF_DIR, to point Spark towards Hadoop configuration files
+# - SPARK_LOCAL_IP, to set the IP address Spark binds to on this node
+# - SPARK_PUBLIC_DNS, to set the public dns name of the driver program
+# - SPARK_CLASSPATH, default classpath entries to append
+
+# Options read by executors and drivers running inside the cluster
+# - SPARK_LOCAL_IP, to set the IP address Spark binds to on this node
+# - SPARK_PUBLIC_DNS, to set the public DNS name of the driver program
+# - SPARK_CLASSPATH, default classpath entries to append
+# - SPARK_LOCAL_DIRS, storage directories to use on this node for shuffle and RDD data
+# - MESOS_NATIVE_LIBRARY, to point to your libmesos.so if you use Mesos
+
+# Options read in YARN client mode
+# - HADOOP_CONF_DIR, to point Spark towards Hadoop configuration files
+# - SPARK_EXECUTOR_INSTANCES, Number of workers to start (Default: 2)
+# - SPARK_EXECUTOR_CORES, Number of cores for the workers (Default: 1).
+# - SPARK_EXECUTOR_MEMORY, Memory per Worker (e.g. 1000M, 2G) (Default: 1G)
+# - SPARK_DRIVER_MEMORY, Memory for Master (e.g. 1000M, 2G) (Default: 512 Mb)
+# - SPARK_YARN_APP_NAME, The name of your application (Default: Spark)
+# - SPARK_YARN_QUEUE, The hadoop queue to use for allocation requests (Default: ‘default’)
+# - SPARK_YARN_DIST_FILES, Comma separated list of files to be distributed with the job.
+# - SPARK_YARN_DIST_ARCHIVES, Comma separated list of archives to be distributed with the job.
+
+# Options for the daemons used in the standalone deploy mode:
+# - SPARK_MASTER_IP, to bind the master to a different IP address or hostname
+# - SPARK_MASTER_PORT / SPARK_MASTER_WEBUI_PORT, to use non-default ports for the master
+# - SPARK_MASTER_OPTS, to set config properties only for the master (e.g. "-Dx=y")
+# - SPARK_WORKER_CORES, to set the number of cores to use on this machine
+# - SPARK_WORKER_MEMORY, to set how much total memory workers have to give executors (e.g. 1000m, 2g)
+# - SPARK_WORKER_PORT / SPARK_WORKER_WEBUI_PORT, to use non-default ports for the worker
+# - SPARK_WORKER_INSTANCES, to set the number of worker processes per node
+# - SPARK_WORKER_DIR, to set the working directory of worker processes
+# - SPARK_WORKER_OPTS, to set config properties only for the worker (e.g. "-Dx=y")
+# - SPARK_HISTORY_OPTS, to set config properties only for the history server (e.g. "-Dx=y")
+# - SPARK_DAEMON_JAVA_OPTS, to set config properties for all daemons (e.g. "-Dx=y")
+# - SPARK_PUBLIC_DNS, to set the public dns name of the master or workers
+
+
+
+
+vagrant@controlmachine:~/project/ansible-bdas$ ansible all -a "cat /opt/spark/conf/slaves"
+node-92-13 | success | rc=0 >>
+node-92-12
+node-92-13
+
+node-92-11 | success | rc=0 >>
+node-92-12
+node-92-13
+
+node-92-12 | success | rc=0 >>
+node-92-12
+node-92-13
+
+
+
+
+vagrant@controlmachine:~/project/ansible-bdas$ ansible all -a "cat /opt/spark/conf/spark-defaults.conf"
+node-92-13 | success | rc=0 >>
+# Default system properties included when running spark-submit.
+# This is useful for setting default environmental settings.
+
+# Example:
+# spark.master            spark://master:7077
+# spark.eventLog.enabled  true
+# spark.eventLog.dir      hdfs://namenode:8021/directory
+# spark.serializer        org.apache.spark.serializer.KryoSerializer
+
+# increase if you see out-of-memory exceptions in spark shell
+spark.executor.memory   1201m
+
+spark.serializer        org.apache.spark.serializer.KryoSerializer
+spark.executor.extraClassPath "/opt/tachyon/client/target/tachyon-client-0.5.0-jar-with-dependencies.jar"
+
+node-92-12 | success | rc=0 >>
+# Default system properties included when running spark-submit.
+# This is useful for setting default environmental settings.
+
+# Example:
+# spark.master            spark://master:7077
+# spark.eventLog.enabled  true
+# spark.eventLog.dir      hdfs://namenode:8021/directory
+# spark.serializer        org.apache.spark.serializer.KryoSerializer
+
+# increase if you see out-of-memory exceptions in spark shell
+spark.executor.memory   1201m
+
+spark.serializer        org.apache.spark.serializer.KryoSerializer
+spark.executor.extraClassPath "/opt/tachyon/client/target/tachyon-client-0.5.0-jar-with-dependencies.jar"
+
+node-92-11 | success | rc=0 >>
+# Default system properties included when running spark-submit.
+# This is useful for setting default environmental settings.
+
+# Example:
+# spark.master            spark://master:7077
+# spark.eventLog.enabled  true
+# spark.eventLog.dir      hdfs://namenode:8021/directory
+# spark.serializer        org.apache.spark.serializer.KryoSerializer
+
+# increase if you see out-of-memory exceptions in spark shell
+spark.executor.memory   1201m
+
+spark.serializer        org.apache.spark.serializer.KryoSerializer
+spark.executor.extraClassPath "/opt/tachyon/client/target/tachyon-client-0.5.0-jar-with-dependencies.jar"

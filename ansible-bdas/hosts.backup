@@ -17,3 +17,11 @@ node-92-11
 node-92-12
 node-92-13
 
+
+[spark_masters]
+node-92-11
+
+[spark_slaves]
+node-92-12
+node-92-13
+
