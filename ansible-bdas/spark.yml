@@ -1,8 +1,6 @@
 ---
 - name: deploy standalone Spark
   hosts: all
-  vars_files:
-    - group_vars/components.yml
   roles:
     - { role: spark_standalone }
   any_errors_fatal: yes
@@ -11,8 +9,6 @@
 
 - name: deploy Spark on Mesos
   hosts: spark_masters
-  vars_files:
-    - group_vars/components.yml
   roles:
     - { role: spark_mesos }
   any_errors_fatal: yes

@@ -38,10 +38,10 @@ Vagrant.configure("2") do |config|
        c.vm.network "private_network", ip: ip
    #   c.vm.network "public_network", ip: ip
    #   c.vm.network "forwarded_port",  guest: 22,  host: 22,  id: "ssh",  auto_correct: true
-      c.vm.network :forwarded_port, guest: 5050, host: 5050, auto_correct: true
       c.vm.network :forwarded_port, guest: 50070, host: 50070, auto_correct: true
       c.vm.network :forwarded_port, guest: 9000, host: 9000, auto_correct: true
       c.vm.network :forwarded_port, guest: 8080, host: 8080, auto_correct: true
+      c.vm.network :forwarded_port, guest: 5050, host: 5050, auto_correct: true
       c.vm.network :forwarded_port, guest: 7077, host: 7077, auto_correct: true
    #   c.ssh.forward_agent = true
 

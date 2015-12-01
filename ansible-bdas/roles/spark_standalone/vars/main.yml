@@ -14,7 +14,7 @@ spark_executor_memory: "{{ (ansible_memtotal_mb * 0.6)|round|int }}m"
 # total memory for use by all apps
 # make sure to leave at least 1gb for the system on slaves
 # TODO set this value depending on total cluster memory
-spark_worker_memory: 4g
+spark_worker_memory: 512g
 
 # only for spark 0.9.x
 # spark_mem: 14g 

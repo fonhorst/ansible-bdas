@@ -8,7 +8,12 @@ master_fqdn: "{{ hostvars[groups['master'][0]]['ansible_fqdn'] }}"
 master_hostname: "{{ hostvars[groups['master'][0]]['ansible_hostname'] }}"
 
 mesos_master_hostname: "{{ hostvars[groups['mesos_masters'][0]]['ansible_hostname'] }}"
+mesos_master_ip: "{{ hostvars[groups['mesos_masters'][0]]['ansible_' + iface]['ipv4']['address'] }}"
+
 hdfs_namenode_hostname: "{{ hostvars[groups['hdfs_namenodes'][0]]['ansible_hostname'] }}"
+hdfs_namenode_ip: "{{ hostvars[groups['hdfs_namenodes'][0]]['ansible_' + iface]['ipv4']['address'] }}"
+
+spark_master_ip: "{{ hostvars[groups['spark_masters'][0]]['ansible_' + iface]['ipv4']['address'] }}"
 spark_master_hostname: "{{ hostvars[groups['spark_masters'][0]]['ansible_hostname'] }}"
 
 clusteruser: "hadoop"
